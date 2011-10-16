@@ -1,49 +1,41 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <html>
 <head>
-  <title>Jasmine Spec Runner: Jasmine Core</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Jasmine Spec Runner: strset</title>
 
-  <link rel="shortcut icon" type="image/png" href="/Users/rauschma/local/jasmine/images/jasmine_favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/Users/rauschma/local/jasmine/images/jasmine_favicon.png">
+    <link href="/Users/rauschma/local/jasmine/lib/jasmine-core/jasmine.css" rel="stylesheet"/>
+    
+    <!-- Jasmine files -->
+    <script type="text/javascript" src="/Users/rauschma/local/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="/Users/rauschma/local/jasmine/src/html/TrivialReporter.js"></script>
+    
+    <!-- The code to be tested and the tests -->
+    <script type="text/javascript" src="../../node_modules/um_browser.js"></script>
+    <script type="text/javascript" src="strset.spec.js"></script>
 
-  <link href="/Users/rauschma/local/jasmine/lib/jasmine-core/jasmine.css" rel="stylesheet"/>
-  
-  <!-- Jasmine files -->
-  <script type="text/javascript" src="/Users/rauschma/local/jasmine/lib/jasmine-core/jasmine.js"></script>
-  <script type="text/javascript" src="/Users/rauschma/local/jasmine/src/html/TrivialReporter.js"></script>
-  
-  <!-- The code to be tested and the tests -->
-  <script type="text/javascript" src="../../node_modules/um_browser.js"></script>
-  <script type="text/javascript" src="strset.spec.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var jasmineEnv = jasmine.getEnv();
+            jasmineEnv.updateInterval = 1000;
 
-  <script type="text/javascript">
-    (function() {
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
+            var trivialReporter = new jasmine.TrivialReporter();
+            jasmineEnv.addReporter(trivialReporter);
 
-      var trivialReporter = new jasmine.TrivialReporter();
+            jasmineEnv.specFilter = function(spec) {
+                return trivialReporter.specFilter(spec);
+            };
 
-      jasmineEnv.addReporter(trivialReporter);
-
-      jasmineEnv.specFilter = function(spec) {
-        return trivialReporter.specFilter(spec);
-      };
-
-      var currentWindowOnload = window.onload;
-
-      window.onload = function() {
-        if (currentWindowOnload) {
-          currentWindowOnload();
-        }
-        execJasmine();
-      };
-
-      function execJasmine() {
-        jasmineEnv.execute();
-      }
-
-    })();
-  </script>
+            var currentWindowOnload = window.onload;
+            window.onload = function() {
+                if (currentWindowOnload) {
+                    currentWindowOnload();
+                }
+                jasmineEnv.execute();
+            };
+        })();
+    </script>
 
 </head>
 
